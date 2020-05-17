@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Digitron</title>
+    <style>
+        * {
+            background-color: red;
+            border-width: 2px;
+            border-color: white;
+            font-weight: bold;
+            border-radius: 20px;
+        }
+
+        #display {
+            color: white;
+            background-color: black;
+            width: 340px;
+            height: 10em;
+            font-weight: bolder;
+        }
+
+        #rezultat {
+            color: white;
+            background-color: red;
+            width: 168px;
+        }
+
+        #ponistavanje,
+        #plusMinus,
+        #zarez,
+        #mnozenje,
+        #deljenje,
+        #oduzimanje,
+        #sabiranje {
+            color: black;
+            background-color: gray;
+        }
+
+        #broj {
+            color: black;
+            background-color: lightgray;
+        }
+
+        input[type="button"] {
+            width: 6em;
+            height: 5em;
+        }
+
+        #broj0 {
+            width: 168px;
+            color: black;
+            background-color: lightgray;
+        }
+
+        #tabela {
+            background-color: white;
+            position: relative;
+            left: 35%;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="3" id="tabela">
+        <tr>
+            <td colspan="4"><input type="text" id="display" disabled></td>
+        </tr>
+        <tr>
+            <td><input id="ponistavanje" type="button" value="C" onclick="erase()"></td>
+            <td><input type="button" id="plusMinus" value="+/-" onclick="dodajMinus()"></td>
+            <!-- <td><input type="button" id="modulus" value="%" onclick="modulus()"></td> -->
+            <td><input type="button" id="zarez" value="," onclick="zarez()"></td>
+            <td><input id="mnozenje" type="button" value="*" onclick="multiply('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="broj" value="7" onclick="number(7)"></td>
+            <td><input type="button" id="broj" value="8" onclick="number(8)"></td>
+            <td><input type="button" id="broj" value="9" onclick="number(9)"></td>
+            <td><input id="deljenje" type="button" value="/" onclick="divide('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" id="broj" value="4" onclick="number(4)"></td>
+            <td><input type="button" id="broj" value="5" onclick="number(5)"></td>
+            <td><input type="button" id="broj" value="6" onclick="number(6)"></td>
+            <td><input id="oduzimanje" type="button" value="-" onclick="minus('-')"></td>
+
+        </tr>
+        <tr>
+            <td><input type="button" id="broj" name="1" value="1" onclick="number(1)"></td>
+            <td><input type="button" id="broj" value="2" onclick="number(2)"></td>
+            <td><input type="button" id="broj" value="3" onclick="number(3)"></td>
+            <td><input id="sabiranje" type="button" value="+" onclick="add('+')"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2"><input type="button" id="broj0" value="0" onclick="number(0)"></td>
+            <!-- <td><input type="button" id="zarez" value="," onclick="zarez()"></td> -->
+            <td colspan="2"><input id="rezultat" type="button" value="=" onclick="equal()"></td>
+        </tr>
+
+    </table>
+    <script>
+        function number(x) {
+            document.getElementById('display').value += x;
+        }
+        function add(x) {
+            document.getElementById('display').value += x;
+        }
+        function minus(x) {
+            document.getElementById('display').value += x;
+        }
+        function multiply(x) {
+            document.getElementById('display').value += x;
+        }
+        function divide(x) {
+            document.getElementById('display').value += x;
+        }
+        function zarez() {
+            document.getElementById('display').value += ".";
+        }
+        function dodajMinus() {
+            let s = document.getElementById('display').value;
+            if (!s.endsWith('-')) {
+                return document.getElementById('display').value += "-";
+            } else {
+                return document.getElementById('display').value += "";
+            }
+        }
+        function erase() {
+            document.getElementById('display').value = '';
+        }
+        function equal() {
+            document.getElementById('display').value = eval(document.getElementById('display').value);
+        }
+
+    </script>
+</body>
+
+</html>
