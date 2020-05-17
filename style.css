@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to right, rgba(250, 55, 97, 0.8), rgba(250, 93, 166, 1));
+}
+
+#container {
+    position: relative;
+    width: 40%;
+    box-shadow: 1rem 0.5rem 1.5rem 0rem rgba(153, 26, 132, 0.77);
+    border: 0.2rem solid grey;
+    border-radius: 1.5rem;
+    min-height: 60vh;
+    background-color: whitesmoke;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#output {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    background-color: black;
+    min-height: 16vh;
+    text-align: end;
+    word-wrap: break-word;
+    border: 0.2rem solid grey;
+    border-radius: 0.5rem;
+}
+
+#uneti {
+    flex: 1;
+    padding-top: 3%;
+    padding-right: 2%;
+    padding-left: 3%;
+    font-size: x-large;
+    font-weight: bolder;
+    /* color: rgba(255, 255, 255, 0.8); */
+    color: rgba(255, 255, 255);
+}
+
+#unos {
+    flex: 1;
+    padding-top: 3%;
+    padding-right: 2%;
+    padding-left: 3%;
+    font-size: x-large;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.buttons {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0.5% 0;
+    margin-bottom: 0.5rem;
+}
+
+.taster,
+.znak,
+.plMin,
+.off,
+.ce,
+.tacka,
+.jednako {
+    box-shadow: 0.1rem 0.1rem 0 rgb(40, 45, 51);
+    background-color: lightslategray;
+    width: 23%;
+    min-height: 8vh;
+    margin: 0.2%;
+    outline: none;
+    border-radius: 1rem;
+    border-style: none;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.taster:hover,
+.znak:hover,
+.plMin:hover,
+.off:hover,
+.ce:hover,
+.tacka:hover,
+.jednako:hover {
+    opacity: 0.8;
+}
+
+#off {
+    width: 47%;
+    background-color: rgba(250, 55, 97, 0.8);
+    color: white;
+}
+
+@media screen and (max-width: 800px) {
+    #container {
+        min-width: 55%;
+        border-radius: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #container {
+        min-width: 80%;
+    }
+
+}
+@media screen and (max-width: 280px) {
+    #container {
+        min-width: 100%;
+    }
+}
